@@ -12,5 +12,11 @@ function validatePassword(password) {
     return password.length >= 8;
 }
 
+function login(username, password) {
+    if (checkCredentals(username, password)) {
+        return { success: true, token: 'abc123' };
+    }
+    return { success: false };
+}
+
 module.exports = { login };
-console.log('Debug: auth module loaded');  // отладочный код
